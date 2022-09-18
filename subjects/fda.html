@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script >
+    fetch("https://websiteghrcem.github.io/subjects/fda.json")
+        .then(response => response.json())
+        .then(data => {
+        console.log(Object.keys(data).length);
+        for (let i = 1; i < Object.keys(data).length + 1; i++){
+            let link = document.getElementById(i);
+            link.setAttribute('href', Object.values(data)[i-1]);
+            link.innerHTML = Object.keys(data)[i-1];
+
+    }
+    
+    
+  })
+  .catch(console.error);
+
+
+    </script>
+    <link rel="stylesheet" href="/styles/subject.css">
+</head>
+<body>
+    
+    <center>
+        <div class="container">
+            
+            <a href="" id="1"></a>
+            <a href="" id="2"></a>
+            <a href="" id="3"></a>
+            <a href="" id="4"></a>
+            <a href="" id="5"></a>
+            <a href="" id="6"></a>
+            <a href="" id="7"></a>
+            <a href="" id="8"></a>
+            <a href="" id="9"></a>
+            <a href="" id="10"></a>
+        </div>
+    </center>
+</body>
+</html>
